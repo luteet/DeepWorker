@@ -3197,7 +3197,7 @@ body._popup-active {
 
   .intro__bg {
     background: var(--accent);
-    padding-top: 67%;
+    padding-top: 57%;
   }
 
   .intro__bg--img {
@@ -3206,10 +3206,10 @@ body._popup-active {
   }
 
   .intro__container {
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: row;
     justify-content: flex-end;
-    padding-top: 300px;
+    padding-top: max(300px, 26%);
   }
 
   .intro__info {

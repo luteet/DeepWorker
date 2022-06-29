@@ -28,7 +28,7 @@
         
         @include _992 {
             background: var(--accent);
-            padding-top: 67%;
+            padding-top: 57%;
             
         }
 
@@ -62,10 +62,10 @@
 
         padding-top: 60px; padding-bottom: 80px;
         @include _992 {
-            align-items: flex-end;
+            align-items: flex-start;
             flex-direction: row;
             justify-content: flex-end;
-            padding-top: 300px;
+            padding-top: max(300px, 26%);
         }
     }
 
