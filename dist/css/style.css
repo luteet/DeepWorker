@@ -2518,7 +2518,7 @@ body._popup-active {
 }
 
 .reviews__slider--arrow {
-  top: 75%;
+  top: 80%;
 }
 
 .reviews__slide {
@@ -2725,7 +2725,7 @@ body._popup-active {
 }
 
 .telegram__info {
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 .telegram__text {
@@ -2948,7 +2948,7 @@ body._popup-active {
   }
 
   .reviews__slider--arrow {
-    top: 41%;
+    top: 47%;
   }
 
   .swiper-button-next,

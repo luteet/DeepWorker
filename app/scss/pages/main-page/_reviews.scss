@@ -117,9 +117,9 @@
         }
 
         &--arrow {
-            top: 75%;
+            top: 80%;
             @media(min-width: 500px) {
-                top: 41%;
+                top: 47%;
             }
 
             @include _768 {
