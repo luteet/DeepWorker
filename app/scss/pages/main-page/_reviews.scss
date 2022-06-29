@@ -3,7 +3,6 @@
     // .reviews__bg
 
     padding-top: 50px;
-    
 
     display: grid;
     grid-template-columns: 100%;
@@ -13,8 +12,6 @@
 
         display: flex;
         flex-direction: column;
-
-        
 
         &::after {
             content: '';
@@ -26,8 +23,6 @@
         &--img {
             width: 100%; height: auto;
             margin-top: -95px;
-
-
         }
     }
 
@@ -37,9 +32,7 @@
         grid-area: 1/1;
 
         width: 100%;
-
         max-width: 1520 + $containerPadding * 2 + px;
-        padding-bottom: 94px;
 
         position: relative;
     }
@@ -95,16 +88,20 @@
 
             &._2 {
                 
-                left: 75px; bottom: 100px;
+                left: 75px; bottom: 150px;
                 width: 90px; height: auto;
 
                 @media(min-width: 500px) {
                     left: 30px;
-                    width: 137px; bottom: 75px;
+                    width: 137px; bottom: 125px;
+                }
+
+                @include _768 {
+                    bottom: 175px;
                 }
 
                 @include _992 {
-                    width: 167px; bottom: 25px;
+                    width: 167px; bottom: 125px;
                 }
             }
         }
@@ -249,10 +246,10 @@
         display: flex;
         justify-content: center;
 
-        padding-top: 95px;
+        padding-top: 95px; padding-bottom: 54px;
         
         @include _768 {
-            padding-top: 95px;
+            padding-top: 95px; padding-bottom: 94px;
         }
         
         @include _992 {
@@ -262,7 +259,8 @@
         // .reviews__footer--link
 
         &--link {
-            box-shadow: none;
+            
+            /* transition: box-shadow .2s ease-in-out; */
             text-align: center;
         }
     }

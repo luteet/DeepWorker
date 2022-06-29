@@ -211,11 +211,30 @@ body {
     border-radius: 150px;
 
     transition: box-shadow .2s ease-in-out, background .2s ease-in-out;
-    box-shadow: 0px 23px 24px rgba(234, 187, 90, 0.51);
+    box-shadow: 0px 23px 24px rgba(234, 187, 90, 0.51),
+    inset -12px 0 0px 0px var(--accent-dark);
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 7px; bottom: 5px;
+        width: 45px; height: 45px;
+        transform: rotate(-35deg);
+        border-radius: 50%;
+        
+        border-left: 6px solid var(--accent-dark);
+
+        transition: border .2s ease-in-out;
+        
+    }
 
     &:hover {
         box-shadow: 0px 0px 0px rgba(234, 187, 90, 0);
         background: var(--accent-light);
+
+        &::before {
+            border-left: 6px solid transparent;
+        }
     }
 }
 

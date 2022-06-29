@@ -13,26 +13,34 @@
 
     display: grid;
     grid-template-columns: 100%;
+
     // .intro__bg
 
     &__bg {
-        
+        height: 0;
         z-index: -1;
 
         display: flex;
         align-items: flex-end;
         justify-content: center;
+
+        position: relative;
         
         @include _992 {
             background: var(--accent);
-            padding-top: 50px; 
+            padding-top: 67%;
+            
         }
 
         grid-area: 1/1;
         // .intro__bg--img
 
         &--img {
-            min-width: 1920px;
+            position: absolute;
+            left: 50%; top: 50px;
+            transform: translate(-50%,0);
+
+            min-width: 1920px; min-height: 100%;
 
             display: none;
             @include _992 {
@@ -129,12 +137,18 @@
     // .intro__image
 
     &__image {
+
+        min-height: 60vw;
+
+        @include _768 {
+            min-height: none;
+        }
+
         @include _992 {
             margin-right: -15%; margin-left: -13%;
             padding: 80px 0 0 0;
         }
 
-        
         // .intro__image--img
 
         &--img {
