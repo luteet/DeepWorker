@@ -9,21 +9,36 @@
     width: 100%;
     padding: 20px var(--popup-padding, 0) 20px 0;
 
+    transition: opacity .2s ease-in-out;
+
     //padding-right: var(--popup-padding) !important;
 
     //transform: translate(0, var(--pos));
 
+    @include _992 {
+        opacity: 1;
+    }
+    opacity: var(--opacity);
+
     z-index: 99;
 
-    /* &._active {
+    &._active {
+        @include _992 {
+            position: absolute;
+            padding: 20px var(--popup-padding, 0) 20px 0;
+            box-shadow: 0 0 5px 1px rgba(#000000, 0);
+
+            background: transparent;
+        }
+
         position: fixed;
-        background-color: white;
+        background: var(--accent-2);
+
+        padding: 10px var(--popup-padding, 0) 10px 0;
 
         box-shadow: 0 0 5px 1px rgba(#000000, 0.3);
     }
-    &._active &__logo {
-        max-width: 125px;
-    } */
+    
     &__logo {
         flex: 0 1 27%;
         position: relative;

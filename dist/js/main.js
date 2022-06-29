@@ -31,12 +31,24 @@ body.addEventListener('click', function (event) {
       menu.forEach(elem => {
         elem.classList.remove('_active')
       })
-    
-      window.scroll({
-        left: 0,
-        top: (section) ? section.offsetTop : 0,
-        behavior: 'smooth'
-      })
+
+      if(window.innerWidth > 992) {
+
+        window.scroll({
+          left: 0,
+          top: (section) ? section.offsetTop : 0,
+          behavior: 'smooth'
+        })
+
+      } else {
+
+        window.scroll({
+          left: 0,
+          top: (section) ? section.offsetTop - header.offsetHeight : 0,
+          behavior: 'smooth'
+        })
+
+      }
     
     }
 
@@ -146,10 +158,9 @@ mobile:       false,
 wow.init();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
-
 */
 
-/* function getCoords(elem) {
+function getCoords(elem) {
   var box = elem.getBoundingClientRect();
 
   return {
@@ -158,6 +169,52 @@ wow.init();
   };
 
 }
+
+function scrollPage() {
+
+  const offsetCheckJs = document.querySelector('.offset-check-js');
+  let top = [getCoords(offsetCheckJs).top, false];
+  
+  header.classList.add('_loaded');
+  
+  function scrollPageFunc() {
+    top[0] = getCoords(offsetCheckJs).top;
+    
+    if(top[0] >= 300 && top[1] == false) {
+  
+        top[1] = true;
+        header.style.setProperty('--opacity', '0');
+        
+        setTimeout(function() {
+          header.classList.add('_active');
+          header.style.setProperty('--opacity', '1');
+            
+        },200);
+  
+    } else if(top[0] <= 300 && top[1] == true) {
+  
+        top[1] = false;
+        header.style.setProperty('--opacity', '0');
+  
+        setTimeout(function() {
+          header.style.setProperty('--opacity', '1');
+          header.classList.remove('_active');
+
+            
+        },200);
+  
+    }
+  }
+  
+  scrollPageFunc();
+  
+  window.onscroll = scrollPageFunc;
+  
+}
+  
+scrollPage();
+
+/* 
 
 
 
