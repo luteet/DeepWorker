@@ -1,0 +1,268 @@
+.header {
+    position: absolute;
+    left: 0; top: 0;
+    
+    /* @include _992 {
+        position: absolute;
+    } */
+    
+    width: 100%;
+    padding: 20px var(--popup-padding, 0) 20px 0;
+
+    //padding-right: var(--popup-padding) !important;
+
+    //transform: translate(0, var(--pos));
+
+    z-index: 99;
+
+    /* &._active {
+        position: fixed;
+        background-color: white;
+
+        box-shadow: 0 0 5px 1px rgba(#000000, 0.3);
+    }
+    &._active &__logo {
+        max-width: 125px;
+    } */
+    &__logo {
+        flex: 0 1 27%;
+        position: relative;
+        z-index: 2;
+        &--img {
+            max-width: min(360px, 85%);
+            min-width: 150px;
+            width: 100%;
+        }
+    }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        align-items: center;
+    }
+
+    &__nav {
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 100vh;
+
+        background: var(--accent);
+
+        overflow: auto;
+
+        opacity: 0; visibility: hidden;
+
+        &._active {
+            opacity: 1; visibility: visible;
+        }
+
+        transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+
+        @include _992 {
+            position: static;
+            width: auto; height: auto;
+            background-color: transparent;
+            padding: 0;
+            overflow: visible;
+
+            opacity: 1; visibility: visible;
+        }
+
+        &--list {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+
+            height: 100%; width: 100%;
+
+            @include _992 {
+                align-items: stretch;
+                flex-direction: row;
+                width: auto;
+            }
+        }
+
+        &--body {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            padding: 75px 0 30px 0;
+
+            position: relative;
+
+            &::before {
+                content: '';
+                position: fixed;
+                left: 0; top: 0;
+                width: 100%; height: 75px;
+                background: var(--accent);
+                z-index: 1;
+            }
+
+            @include _992 {
+                flex-direction: row;
+                padding: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        &--item {
+            width: 100%;
+            text-align: center;
+            
+            @include _992 {
+                width: auto;
+            }
+
+        }
+
+        &--link {
+            width: 100%;
+
+            display: inline-block;
+
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 133%;
+            color: var(--white);
+
+            padding: 10px 15px;
+
+            text-shadow: 0 0 10px var(--accent);
+
+            transition: color .2s ease-in-out;
+
+            &:hover {
+                color: var(--accent-2);
+            }
+
+            @include _992 {
+                width: auto;
+            }
+
+            @media(min-width: 1440px) {
+                padding: 10px 30px;
+            }
+
+        }
+    }
+
+    &__lang {
+        position: relative;
+        
+        margin-top: 30px;
+        
+        @include _992 {
+            margin-left: 15px; margin-top: 0px;
+        }
+        
+        @media(min-width: 1440px) {
+            margin-left: 30px;
+        }
+
+        &._active &--list {
+            opacity: 1; visibility: visible;
+            transform: translate(0,0);
+        }
+
+        &._active &--intro {
+            border-radius: 7px 7px 0 0;
+        }
+
+        &._active &--select-arrow {
+            transform: scaleY(-1);
+        }
+
+        &--intro {
+            background: var(--accent-light);
+            border-radius: 7px;
+
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 133%;
+            color: var(--white);
+
+            padding: 4px 20px;
+
+            display: flex;
+            align-items: center;
+
+            transition: border-radius .2s ease-in-out;
+
+            & > * {
+                position: relative;
+                z-index: 2;
+            }
+
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 5px; bottom: 7px;
+                width: 20%; height: 50%;
+                box-shadow: -3px 3px 0 0px var(--accent-light-2);
+                border-radius: 45% 25% 45% 25%;
+                z-index: 1;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                right: 5px; top: 7px;
+                width: 20%; height: 50%;
+                box-shadow: 3px -3px 0 0px var(--accent-light-2);
+                border-radius: 45% 25% 45% 25%;
+                z-index: 1;
+            }
+        }
+
+        &--select-arrow {
+            display: inline-block;
+            font-size: 8px;
+
+            margin-left: 7px; margin-top: 3px;
+
+            transition: transform .2s ease-in-out;
+        }
+
+        &--list {
+            position: absolute;
+            left: 0; top: 100%;
+
+            width: 100%;
+            border-radius: 0 0 7px 7px;
+            padding: 5px;
+
+            background: var(--accent-light);
+
+            transform: translate(0,-15%);
+            opacity: 0; visibility: hidden;
+
+            transition: opacity .2s ease-in-out, visibility .2s ease-in-out, transform .2s ease-in-out;
+
+        }
+
+        &--link {
+            text-align: center;
+            color: var(--white);
+            font-size: 1.125rem;
+            font-weight: 600;
+
+            display: block;
+            padding: 5px 10px;
+
+            border-radius: 7px;
+
+            background: transparent;
+
+            transition: background .2s ease-in-out;
+            &:hover {
+                background: var(--accent);
+            }
+        }
+    }
+}

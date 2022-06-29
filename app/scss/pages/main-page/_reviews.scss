@@ -1,0 +1,334 @@
+.reviews {
+
+    // .reviews__bg
+
+    padding-top: 50px;
+    
+
+    display: grid;
+    grid-template-columns: 100%;
+
+    &__bg {
+        grid-area: 1/1;
+
+        display: flex;
+        flex-direction: column;
+
+        
+
+        &::after {
+            content: '';
+            width: 100%; flex: 1 1 auto;
+            background: var(--accent-2-light);
+        }
+        // .reviews__bg--img
+
+        &--img {
+            width: 100%; height: auto;
+            margin-top: -95px;
+
+
+        }
+    }
+
+    // .reviews__container
+
+    &__container {
+        grid-area: 1/1;
+
+        width: 100%;
+
+        max-width: 1520 + $containerPadding * 2 + px;
+        padding-bottom: 94px;
+
+        position: relative;
+    }
+
+    // .reviews__title
+
+    &__title {
+    }
+
+    // .reviews__slider
+
+    &__slider {
+        max-width: 1520 + $containerPadding * 2 - 155 + px;
+
+        margin: 0;
+
+        @media(min-width: 500px) {
+            margin: 0 67px;
+        }
+
+        &--wrapper {
+            padding-top: 110px;
+        
+            @media(min-width: 1600px) {
+                padding-top: 210px;
+            }
+        }
+
+        // .reviews__slider--decor
+
+        &--decor {
+            position: absolute;
+
+            &._1 {
+                
+                display: none;
+
+                @include _768 {
+                    right: -30px; top: 125px;
+                    width: 131px; height: auto;
+
+                    display: block;
+                }
+
+                @include _992 {
+                    top: 145px;
+                }
+
+                @media(min-width: 1600px) {
+                    top: 245px;
+                }
+            }
+
+            &._2 {
+                
+                left: 75px; bottom: 100px;
+                width: 90px; height: auto;
+
+                @media(min-width: 500px) {
+                    left: 30px;
+                    width: 137px; bottom: 75px;
+                }
+
+                @include _992 {
+                    width: 167px; bottom: 25px;
+                }
+            }
+        }
+
+        // .reviews__slider--list
+
+        &--list {
+        }
+
+        // .reviews__slider--slide
+
+        &--slide {
+        }
+
+        &--arrow {
+            top: 75%;
+            @media(min-width: 500px) {
+                top: 41%;
+            }
+
+            @include _768 {
+                top: 42%;
+            }
+            
+            @include _992 {
+                top: 46%;
+            }
+            
+            @media(min-width: 1600px) {
+                top: 52%;
+            }
+        }
+    }
+
+    // .reviews__slide
+
+    &__slide {
+        height: auto;
+        // .reviews__slide--body
+
+        &--body {
+            border: 4px solid var(--white);
+            background: var(--accent-2-light);
+
+            border-radius: 17px;
+            padding: 0 15px 15px 15px;
+            @include _992 {
+                padding: 0 30px 30px 30px;
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            min-height: 100%;
+        }
+
+        // .reviews__slide--avatar
+
+        &--avatar {
+            text-align: center;
+            display: inline-block;
+
+            margin-top: calc(-149px / 2);
+
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 0;
+                width: 100%; height: 100%;
+                border: 7px solid var(--accent);
+                border-radius: 50%;
+                z-index: 2;
+            }
+        }
+
+        // .reviews__slide--avatar-img
+
+        &--avatar-img {
+            border-radius: 50%;
+            filter: grayscale(1);
+        }
+
+        // .reviews__slide--name
+
+        &--name {
+            padding-top: 7px;
+
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 148.02%;
+
+            text-align: center;
+
+            @include _768 {
+                font-size: 1.5rem;
+            }
+            
+            @include _992 {
+                font-size: 2rem;
+            }
+            
+        }
+
+        // .reviews__slide--profession
+
+        &--profession {
+
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 148.02%;
+
+            @include _768 {
+                font-size: 1.125rem;
+            }
+            
+            @include _992 {
+                font-size: 1.25rem;
+            }
+            
+        }
+
+        // .reviews__slide--text
+
+        &--text {
+            padding-top: 8px;
+
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 148.02%;
+            
+            & p {
+                padding: 5px 0;
+            }
+        }
+    }
+
+    // .reviews__footer
+
+    &__footer {
+        display: flex;
+        justify-content: center;
+
+        padding-top: 95px;
+        
+        @include _768 {
+            padding-top: 95px;
+        }
+        
+        @include _992 {
+            padding-top: 65px;
+        }
+
+        // .reviews__footer--link
+
+        &--link {
+            box-shadow: none;
+            text-align: center;
+        }
+    }
+}
+
+.swiper-button-next, .swiper-button-prev {
+
+    height: 50px; width: 50px;
+    @media(min-width: 500px) {
+        height: 66px; width: 72px;
+    }
+
+    background: var(--accent);
+
+    &::after {
+
+        font-family: 'DeepWorker-icons' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+    
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        color: var(--black);
+
+        font-size: 13px;
+
+        @media(min-width: 500px) {
+            font-size: 19px;
+        }
+    }
+}
+
+.swiper-button-next {
+
+    border-radius: 50%;
+
+    @media(min-width: 500px) {
+        justify-content: flex-end;
+
+        padding-right: 20px;
+        border-radius: 0 150px 150px 0;
+    }
+    
+
+    &::after {
+        content: "\e900";
+    }
+}
+
+.swiper-button-prev {
+
+    border-radius: 50%;
+
+    @media(min-width: 500px) {
+        justify-content: flex-start;
+
+        padding-left: 20px;
+        border-radius: 150px 0 0 150px;
+    }
+
+    &::after {
+        content: "\e901";
+    }
+}

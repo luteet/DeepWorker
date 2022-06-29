@@ -1,0 +1,209 @@
+.how-we-work {
+    padding: 75px 0;
+    // .how-we-work__container
+
+    &__container {
+    }
+
+    // .how-we-work__header
+
+    &__header {
+    }
+
+    // .how-we-work__title
+
+    &__title {
+    }
+
+    // .how-we-work__text
+
+    &__text {
+        padding-top: 10px;
+    }
+
+    // .how-we-work__block
+
+    &__block {
+        border: 11px solid var(--accent-2-light);
+        border-radius: 14px;
+
+        margin-top: 61px;
+    }
+
+    // .how-we-work__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        counter-reset: counter;
+    }
+
+    // .how-we-work__item
+
+    &__item {
+        flex: 1 1 100%;
+
+        padding: 32px 15px;
+
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+
+        @include _768 {
+            padding: 52px 30px;
+
+            &:not(:last-child) {
+                margin-bottom: 50px;
+            }
+        }
+        
+        @include _992 {
+            flex: 0 1 33.333%;
+
+            padding: 82px 30px;
+            &:not(:last-child) {
+                margin-bottom: 0px;
+            }
+        }
+
+        position: relative;
+
+        &:nth-child(even) &--number::before {
+            
+            
+            @include _992 {
+                top: auto; bottom: -5px;
+                transform: translate(-50%,50%);
+            }
+            
+        }
+
+        &:nth-child(-n + 9) &--number::before {
+            content: "0"counter(counter);
+        }
+
+        @include _992 {
+            &:nth-child(2n + 4) &--number::before {
+                top: -5px;
+                transform: translate(-50%,-50%);
+            }
+    
+            &:nth-child(6n + 5) &--number::before {
+                top: auto; bottom: -5px;
+                transform: translate(-50%,50%);
+            }
+        }
+        
+        // .how-we-work__item--body
+
+        &--body {
+        }
+
+        // .how-we-work__item--number
+
+        &--number {
+            &::before {
+                counter-increment: counter;
+
+                content: counter(counter);
+
+                position: absolute;
+                left: 50%; top: -5px;
+                transform: translate(-50%,-50%);
+                
+                border-radius: 50%;
+
+                background: var(--accent-2-light);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-weight: 700;
+                font-size: 1.5rem;
+                line-height: 126.52%;
+
+                width: 54px; height: 54px;
+
+                @include _768 {
+                    font-size: 2rem;
+
+                    width: 74px; height: 74px;
+                }
+                
+                @include _992 {
+                    font-size: 2.5rem;
+
+                    width: 84px; height: 84px;
+                }
+                
+            }
+        }
+
+        // .how-we-work__item--image
+
+        &--image {
+        }
+
+        // .how-we-work__item--img
+
+        &--img {
+            width: 100%; height: 248px;
+            object-fit: contain;
+        }
+
+        // .how-we-work__item--text
+
+        &--text {
+            padding-top: 30px;
+
+            font-weight: 700;
+            font-size: 1.125rem;
+            line-height: 126.52%;
+
+            @include _768 {
+                font-size: 1.25rem;
+            }
+            
+            @include _992 {
+                font-size: 1.5rem;
+            }
+            
+        }
+    }
+
+    // .how-we-work__footer
+
+    &__footer {
+        display: flex;
+        justify-content: center;
+
+        padding-top: 43px;
+
+        @include _768 {
+            padding-top: 53px;
+        }
+        
+        @include _992 {
+            padding-top: 63px;
+        }
+        
+        // .how-we-work__footer--block
+
+        &--block {
+        }
+
+        // .how-we-work__footer--link
+
+        &--link {
+        }
+
+        // .how-we-work__footer--min-text
+
+        &--min-text {
+        }
+    }
+}
+

@@ -1,0 +1,213 @@
+.tariffs {
+    padding: 35px 0 75px 0;
+    // .tariffs__container
+
+    &__container {
+    }
+
+    // .tariffs__title
+
+    &__title {
+    }
+
+    // .tariffs__list
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin: -10px;
+        @media(min-width: 1100px) {
+            margin: -15px;
+        }
+        padding-top: 44px;
+    }
+
+    // .tariffs__card
+
+    &__card {
+        flex: 1 1 100%;
+
+        @include _768 {
+            flex: 0 1 50%;
+        }
+        
+        @include _992 {
+            flex: 0 1 33.333%;
+        }
+
+        padding: 10px;
+        @media(min-width: 1100px) {
+            padding: 15px;
+        }
+        // .tariffs__card--body
+
+        &--body {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0; top: 0;
+                width: 100%; height: 100%;
+                border: 4px solid var(--white);
+                background: var(--accent-2-light);
+                border-radius: 17px;
+                z-index: -1;
+            }
+            border-radius: 17px;
+
+            padding: 42px 15px;
+            @media(min-width: 1100px) {
+                padding: 42px 35px;
+            }
+
+            min-height: 100%;
+            overflow: hidden;
+        }
+
+        // .tariffs__card--name
+
+        &--name {
+            font-weight: 700;
+            font-size: 2.25rem;
+            line-height: 133%;
+            text-align: center;
+
+            padding-top: 20px;
+        }
+
+        // .tariffs__card--param-list
+
+        &--param-list {
+            padding-top: 15px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        // .tariffs__card--param-li
+
+        &--param-li {
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 177.4%;
+
+            padding: 10px 0;
+
+            @include _992 {
+                font-size: 1.125rem;
+                padding: 15px 0;
+            }
+
+            text-align: center;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            &:last-child {
+                border-bottom: 0px;
+            }
+        }
+
+        // .tariffs__card--price
+
+        &--price {
+            display: flex;
+            justify-content: center;
+
+            padding: 15px 0 26px 0;
+            @include _992 {
+                padding: 10px 0 36px 0;
+            }
+        }
+
+        // .tariffs__card--price-value
+
+        &--price-value {
+            font-weight: 700;
+            font-size: 4rem;
+            line-height: 107%;
+        }
+
+        // .tariffs__card--price-info
+
+        &--price-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            padding-left: 15px; padding-bottom: 10px;
+        }
+
+        // .tariffs__card--price-min-info
+
+        &--price-min-info {
+        }
+
+        // .tariffs__card--price-currency
+
+        &--price-currency {
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 107%;
+        }
+
+        // .tariffs__card--price-period
+
+        &--price-period {
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 107%;
+
+            color: rgba(255, 255, 255, 0.42);
+        }
+
+        // .tariffs__card--footer
+
+        &--footer {
+        }
+
+        // .tariffs__card--link
+
+        &--link {
+            width: 100%;
+            text-align: center;
+        }
+
+        // .tariffs__card--label
+
+        &--label {
+            position: absolute;
+            left: 0; top: 0;
+            z-index: 2;
+            transform: rotate(-55deg) translate(-33%, -75%);
+            color: var(--dark);
+
+            font-weight: 700;
+            font-size: 0.875rem;
+            line-height: 133%;
+            text-transform: uppercase;
+
+            padding: 8px 0;
+            width: 200px;
+            text-align: center;
+
+            background: var(--accent);
+        }
+
+        // .tariffs__card--price-saving
+
+        &--price-saving {
+            text-transform: uppercase;
+            margin-bottom: -5px;
+
+            font-weight: 700;
+            font-size: 0.875rem;
+            line-height: 133%;
+
+            &._accent {
+                color: var(--accent);
+            }
+        }
+    }
+}

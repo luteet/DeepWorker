@@ -1,0 +1,23 @@
+@import 'mixin';
+@import 'null';
+@import 'libs';
+@import 'vars';
+@import 'global';
+@import 'font';
+
+@import 'main-sections/header';
+
+
+@import 'pages/main-page/intro';
+@import 'pages/main-page/about-us';
+@import 'pages/main-page/what-is';
+@import 'pages/main-page/what-get';
+@import 'pages/main-page/how-we-work';
+@import 'pages/main-page/tariffs';
+@import 'pages/main-page/reviews';
+@import 'pages/main-page/upgrade';
+@import 'pages/main-page/telegram';
+@import 'pages/main-page/charity';
+
+
+@import 'main-sections/footer';

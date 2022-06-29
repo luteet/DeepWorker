@@ -1,0 +1,91 @@
+
+
+$containerPadding: 15;
+
+$container: 1291 + ($containerPadding * 2);
+$containerMin: 759 + ($containerPadding * 2);
+$containerLarge: 1413 + ($containerPadding * 2);
+
+:root {
+    --title-font: 'Gilroy';
+    --main-font: 'Gilroy';
+    
+    --accent: #EABB5A;
+    --accent-light: #EFD161;
+    --accent-light-2: #F4E07C;
+    --accent-2: #1F45F5;
+    --accent-2-light: #436DEA;
+
+    --dark: #424242;
+
+    --white: #FFF;
+    --black: #000;
+
+    --container-padding: 15px;
+}
+
+@font-face {
+    @include font-include('Gilroy', 900, swap, normal, 'Gilroy-Black');
+}
+
+@font-face {
+    @include font-include('Gilroy', 700, swap, normal, 'Gilroy-Bold');
+}
+
+@font-face {
+    @include font-include('Gilroy', 600, swap, normal, 'Gilroy-SemiBold');
+}
+
+@font-face {
+    @include font-include('Gilroy', 500, swap, normal, 'Gilroy-Medium');
+}
+
+@font-face {
+    @include font-include('Gilroy', 400, swap, normal, 'Gilroy-Regular');
+}
+
+@font-face {
+    @include font-include('Inter', 400, swap, normal, 'Inter-Regular');
+}
+
+@font-face {
+    @include font-include('Inter', 700, swap, normal, 'Inter-Bold');
+}
+
+
+@font-face {
+    font-family: 'DeepWorker-icons';
+    src:
+      url('DeepWorker-icons.ttf?3zcq2i') format('truetype'),
+      url('DeepWorker-icons.woff?3zcq2i') format('woff'),
+      url('DeepWorker-icons.svg?3zcq2i#DeepWorker-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="_icon-"], [class*=" _icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'DeepWorker-icons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  ._icon-arrow-next::before {
+    content: "\e900";
+  }
+  ._icon-arrow-prev::before {
+    content: "\e901";
+  }
+  ._icon-select-arrow::before {
+    content: "\e902";
+  }
+  
