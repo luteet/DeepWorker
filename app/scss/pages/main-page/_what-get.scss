@@ -9,6 +9,8 @@
     
 
     &__bg {
+        z-index: -1;
+        
         grid-area: 1/1;
         margin-top: -30px;
         @include _992 {

@@ -72,9 +72,13 @@ body.addEventListener('click', function (event) {
 
       whatIsVideoPreview.classList.add('_hide');
 
-      let video = whatIsVideoPreview.parentElement.querySelector('.what-is__video--element');
+      let video = whatIsVideoPreview.parentElement.querySelector('.what-is__video--element'),
+          videoUrl = video.dataset.url;
 
-      if(video) video.play();
+      video.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoUrl}?feature=oembed&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+      
+      
       
 
     }
@@ -149,7 +153,7 @@ let charitySlider = new Swiper('.charity__slider--wrapper', {
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
-/* 
+
 // =-=-=-=-=-=-=-=-=-=-=-=- <Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
 
 wow = new WOW({
@@ -158,7 +162,7 @@ mobile:       false,
 wow.init();
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
-*/
+
 
 function getCoords(elem) {
   var box = elem.getBoundingClientRect();
