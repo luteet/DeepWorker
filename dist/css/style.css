@@ -1601,11 +1601,16 @@ body._popup-active {
 
 ._btn:hover {
   box-shadow: 0px 13px 25px rgba(234, 187, 90, 0.31);
-  background: var(--accent-light);
+  background: var(--accent-light-2);
 }
 
 ._btn:hover::before {
   border-left: 6px solid transparent;
+}
+
+._btn:active {
+  background: var(--accent-light);
+  box-shadow: 0px 0 0 rgba(234, 187, 90, 0);
 }
 
 ._btn-block {
@@ -1622,6 +1627,55 @@ body._popup-active {
   line-height: 148.02%;
   text-align: center;
   color: rgba(255, 255, 255, 0.58);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  height: 50px;
+  width: 50px;
+  background: var(--accent);
+  transition: background 0.2s ease-in-out;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--accent-light-2);
+}
+
+.swiper-button-next:active,
+.swiper-button-prev:active {
+  background: var(--accent-light);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-family: "DeepWorker-icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--black);
+  font-size: 13px;
+}
+
+.swiper-button-next {
+  border-radius: 50%;
+}
+
+.swiper-button-next::after {
+  content: "\e900";
+}
+
+.swiper-button-prev {
+  border-radius: 50%;
+}
+
+.swiper-button-prev::after {
+  content: "\e901";
 }
 
 ._main-title {
@@ -2984,44 +3038,6 @@ body._popup-active {
   text-align: center;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-  height: 50px;
-  width: 50px;
-  background: var(--accent);
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-family: "DeepWorker-icons" !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--black);
-  font-size: 13px;
-}
-
-.swiper-button-next {
-  border-radius: 50%;
-}
-
-.swiper-button-next::after {
-  content: "\e900";
-}
-
-.swiper-button-prev {
-  border-radius: 50%;
-}
-
-.swiper-button-prev::after {
-  content: "\e901";
-}
-
 .upgrade {
   padding: 100px 0 75px 0;
 }
@@ -3323,20 +3339,6 @@ body._popup-active {
 }
 
 @media (min-width: 500px) {
-  .reviews__slider {
-    margin: 0 67px;
-  }
-
-  .reviews__slider--decor._2 {
-    left: 30px;
-    width: 137px;
-    bottom: 125px;
-  }
-
-  .reviews__slider--arrow {
-    top: 47%;
-  }
-
   .swiper-button-next,
   .swiper-button-prev {
     height: 66px;
@@ -3358,6 +3360,20 @@ body._popup-active {
     justify-content: flex-start;
     padding-left: 20px;
     border-radius: 150px 0 0 150px;
+  }
+
+  .reviews__slider {
+    margin: 0 67px;
+  }
+
+  .reviews__slider--decor._2 {
+    left: 30px;
+    width: 137px;
+    bottom: 125px;
+  }
+
+  .reviews__slider--arrow {
+    top: 47%;
   }
 
   .charity__slider::before {
