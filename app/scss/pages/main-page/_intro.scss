@@ -141,7 +141,7 @@
         min-height: 60vw;
 
         @include _768 {
-            min-height: none;
+            min-height: auto;
         }
 
         @include _992 {
