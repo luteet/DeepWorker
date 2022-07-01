@@ -9,6 +9,7 @@
   "author": "luteet",
   "license": "ISC",
   "devDependencies": {
+    "@lottiefiles/lottie-player": "^1.5.7",
     "browser-sync": "^2.26.13",
     "del": "^6.0.0",
     "fslightbox": "^3.3.1",

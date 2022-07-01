@@ -72,6 +72,7 @@ function scriptsLib() {
         //'node_modules/slick-carousel/slick/slick.min.js', // Слайдер (jQuery)
         //'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js', // Попап (jQuery)
         'node_modules/wowjs/dist/wow.min.js', // Анимация
+        'node_modules/@lottiefiles/lottie-player/dist/lottie-player.js', // Анимация
         //'node_modules/nouislider/dist/nouislider.min.js', // Кастомный input[range]
         //'node_modules/fslightbox/index.js', // Галерея
         'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()

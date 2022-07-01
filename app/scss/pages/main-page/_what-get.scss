@@ -59,24 +59,25 @@
 
     &__row {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
         justify-content: space-between;
 
-        @include _768 {
+        @include _992 {
             flex-direction: row;
+            align-items: center;
         }
 
         padding: 24px 0;
         @include _992 {
-            padding: 48px 0;
+            padding: 0;
         }
     }
 
     &__row:nth-child(even) {
         flex-direction: column-reverse;
 
-        @include _768 {
+        @include _992 {
             flex-direction: row;
         }
     }
@@ -84,18 +85,16 @@
     &__row:nth-child(even) &__image {
         text-align: right;
         padding-right: 0;
-
-        
     }
 
     // .what-get__image
 
-    &__image {
-        flex: 0 1 50%;
+    &__picture {
+        flex: 0 1 60%;
         width: 100%;
 
-        @include _768 {
-            padding-top: 25%;
+        @include _992 {
+            padding-top: 34%;
             width: auto;
         }
         
@@ -106,11 +105,11 @@
         position: relative;
         // .what-get__image--img
 
-        &--img {
+        &--player {
             position: absolute;
-            left: 0; top: 0;
+            left: 50%; top: 0;
+            transform: translate(-50%,0);
             width: 100%; height: 100%;
-            object-fit: contain;
             max-width: 100%;
         }
     }
@@ -119,19 +118,49 @@
 
     &__info {
 
+        flex: 1 1 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+
+        @include _992 {
+            display: block;
+            width: auto;
+        }
+
         &--body {
-            max-width: 490px;
+            
+            text-align: center;
+
+            @include _992 {
+                text-align: left;
+                max-width: 490px;
+            }
         }
 
         // .what-get__info--title
 
         &--title {
+            & br {
+                display: none;
+            }
+            @include _992 {
+                & br {
+                    display: inherit;
+                }
+            }
         }
 
         // .what-get__info--text
 
         &--text {
-            padding-top: 15px;
+            padding-top: 5px;
+            @include _768 {
+                padding-top: 15px;
+            }
         }
 
         // .what-get__info--footer

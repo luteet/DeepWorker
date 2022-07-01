@@ -195,7 +195,10 @@ body {
     display: inline-block;
     position: relative;
     
-    padding: 21px 45px;
+    padding: 21px 25px;
+    @media(min-width: 360px) {
+        padding: 21px 45px;
+    }
 
     background: var(--accent);
     color: var(--dark);

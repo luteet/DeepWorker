@@ -1573,7 +1573,7 @@ body._popup-active {
 ._btn {
   display: inline-block;
   position: relative;
-  padding: 21px 45px;
+  padding: 21px 25px;
   background: var(--accent);
   color: var(--dark);
   font-weight: 700;
@@ -2632,7 +2632,7 @@ body._popup-active {
 
 .what-get__row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
   padding: 24px 0;
@@ -2647,31 +2647,43 @@ body._popup-active {
   padding-right: 0;
 }
 
-.what-get__image {
-  flex: 0 1 50%;
+.what-get__picture {
+  flex: 0 1 60%;
   width: 100%;
   padding-right: 15px;
   padding-top: 50%;
   position: relative;
 }
 
-.what-get__image--img {
+.what-get__picture--player {
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 0;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
   max-width: 100%;
 }
 
+.what-get__info {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .what-get__info--body {
-  max-width: 490px;
+  text-align: center;
+}
+
+.what-get__info--title br {
+  display: none;
 }
 
 .what-get__info--text {
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 .what-get__info--footer {
@@ -3327,6 +3339,12 @@ body._popup-active {
   color: var(--white);
 }
 
+@media (min-width: 360px) {
+  ._btn {
+    padding: 21px 45px;
+  }
+}
+
 @media (min-width: 400px) {
   .how-we-work__item--image {
     padding-top: 0;
@@ -3439,17 +3457,8 @@ body._popup-active {
     padding: 16px 36px;
   }
 
-  .what-get__row {
-    flex-direction: row;
-  }
-
-  .what-get__row:nth-child(even) {
-    flex-direction: row;
-  }
-
-  .what-get__image {
-    padding-top: 25%;
-    width: auto;
+  .what-get__info--text {
+    padding-top: 15px;
   }
 
   .how-we-work__item {
@@ -3713,7 +3722,35 @@ body._popup-active {
   }
 
   .what-get__row {
-    padding: 48px 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .what-get__row {
+    padding: 0;
+  }
+
+  .what-get__row:nth-child(even) {
+    flex-direction: row;
+  }
+
+  .what-get__picture {
+    padding-top: 34%;
+    width: auto;
+  }
+
+  .what-get__info {
+    display: block;
+    width: auto;
+  }
+
+  .what-get__info--body {
+    text-align: left;
+    max-width: 490px;
+  }
+
+  .what-get__info--title br {
+    display: inherit;
   }
 
   .how-we-work__item {
