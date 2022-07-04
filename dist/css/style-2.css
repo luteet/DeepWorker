@@ -160,8 +160,11 @@
     .intro__bg {
         padding-top: 48%;
     }
+    .intro__bg--img {
+        min-width: 1300px;
+    }
     .intro__container {
-        padding-top: max(330px,18%);
+        padding-top: max(260px,18%);
     }
     .intro__image {
         padding: 0;
