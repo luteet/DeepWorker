@@ -33,13 +33,47 @@
                     </ul>
                 </nav>
             </div>
+            <!-- Изменил footer__copy -->
             <div class="footer__copy">
-                <div class="footer__copy--body _container _txt-center">
-                    © 2022 «DEEPWORKER»
+                <div class="footer__copy--body _container">
+                    <div class="footer__copy--block">
+                        © 2022 «DEEPWORKER»
+                    </div>
+                    <ul class="footer__copy--list">
+                        <li class="footer__copy--item">
+                            <a href="#" class="footer__copy--link">
+                                Політика конфіденційності
+                            </a>
+                        </li>
+                        <li class="footer__copy--item">
+                            <a href="#" class="footer__copy--link">
+                                Договір оферти
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </footer>
     </div>
+
+    <!-- Добавил уведомление о куки и изменил js -->
+    <script>
+        if(!localStorage.getItem('DeepWorker-cookies-message')) {
+            document.body.insertAdjacentHTML('beforeend', 
+            `
+            <div class="cookies-message">
+                <div class="cookies-message__body _container">
+                    <div class="cookies-message__text">
+                        Сайт использует куки
+                    </div>
+                    <button type="button" class="cookies-message__submit">
+                        Принять
+                    </button>
+                </div>
+            </div>
+            `);
+        }
+    </script>
 
     <script src="js/libs.min.js"></script>
     <script src="js/main.min.js"></script>

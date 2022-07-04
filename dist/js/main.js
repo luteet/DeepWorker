@@ -77,31 +77,21 @@ body.addEventListener('click', function (event) {
 
       video.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoUrl}?feature=oembed&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
-      
-      
-      
+    }
 
+
+
+    let cookiesMessageSubmit = thisTarget.closest('.cookies-message__submit');
+    if(cookiesMessageSubmit) {
+      let cookiesMessage = cookiesMessageSubmit.closest('.cookies-message');
+      cookiesMessage.classList.add('_removing');
+      localStorage.setItem('DeepWorker-cookies-message', true);
+      setTimeout(() => {
+        cookiesMessage.remove();
+      },300)
     }
 
 })
-/* 
-body.onmouseover = body.onmouseout = handler;
-
-
-function handler(event) {
-
-  let headerLang = event.target.closest('.header__lang');
-  if(headerLang) {
-    if (event.type == 'mouseover') {
-      headerLang.classList.add('_active');
-    }
-    if (event.type == 'mouseout') {
-      headerLang.classList.remove('_active');
-    }
-  }
-
-  
-} */
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -129,7 +119,6 @@ let reviewsSlider = new Swiper('.reviews__slider--wrapper', {
 
 let charitySlider = new Swiper('.charity__slider--wrapper', {
   
-  /* spaceBetween: 15, */
   slidesPerView: 1,
 
   loop: true,
@@ -142,7 +131,6 @@ let charitySlider = new Swiper('.charity__slider--wrapper', {
   breakpoints: {
     1200: {
       slidesPerView: 2,
-      /* spaceBetween: 30, */
     },
     768: {
       slidesPerView: 2,
@@ -217,30 +205,3 @@ function scrollPage() {
 }
   
 scrollPage();
-
-/* 
-
-
-
-let scrollbarWidth = 0, offsetCheckJs = document.querySelector('.offset-check-js');
-scrollbarWidth = window.innerWidth - body.offsetWidth;
-
-let pageTop = getCoords(offsetCheckJs).top;
-
-window.onscroll = function() {
-  pageTop = getCoords(offsetCheckJs).top
-}
-
-if(fsLightboxInstances['charity-gallery']) {
-  fsLightboxInstances['charity-gallery'].props.onOpen = function() {
-    
-    html.style.setProperty('--popup-padding', scrollbarWidth + 'px');
-    
-    window.scroll({
-      left: 0,
-      top: pageTop,
-      behavior: 'auto'
-    })
-  }
-  fsLightboxInstances['charity-gallery'].props.onClose = () => html.style.setProperty('--popup-padding', 0 + 'px'); scrollbarWidth = window.innerWidth - body.offsetWidth;
-} */
