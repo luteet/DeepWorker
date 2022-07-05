@@ -3,7 +3,13 @@
     <main class="main">
         <section class="intro" id="intro">
             <div class="intro__bg _bg">
-                <img src="img/intro/bg.svg" width="0" height="0" alt="" class="intro__bg--img _bg-img">
+                <!-- Заменил img на picture -->
+                <picture>
+                    <source srcset="img/intro/bg.svg" media="(min-width: 400px)">
+                    <source srcset="img/intro/bg-mob.svg">
+                    <img src="img/intro/bg.svg" width="0" height="0" alt="" class="intro__bg--img _bg-img">
+                </picture>
+                <!-- /Заменил img на picture -->
             </div>
             <div class="intro__container _container _large">
                 <div class="intro__info">
@@ -17,6 +23,13 @@
                             Онлайн-коворкінг в оточенні найпродуктивніших людей
                         </p>
                     </div>
+
+                    <!-- Добавил блок с картинкой для мобильной версии -->
+                    <div class="intro__image _mob">
+                        <img src="img/intro/image.svg" loading="lazy" width="740" alt="" class="intro__image--img">
+                    </div>
+                    <!-- /Добавил блок с картинкой для мобильной версии -->
+
                     <!-- Убрал wow animate__fadeInUp и data-wow-delay="0.8s" -->
                     <div class="intro__info--footer">
                         <a href="#" class="intro__info--btn _btn">
@@ -127,7 +140,7 @@
                     <div class="what-get__row">
                         <!-- Заменил animate__fadeInLeft -->
                         <div class="what-get__picture wow animate__fadeIn">
-                            <lottie-player class="what-get__picture--player" src="https://assets8.lottiefiles.com/packages/lf20_ilkjnr2i.json"  background="transparent"  speed="1" loop autoplay></lottie-player>
+                            <lottie-player class="what-get__picture--player _large-size" src="https://assets8.lottiefiles.com/packages/lf20_ilkjnr2i.json"  background="transparent"  speed="1" loop autoplay></lottie-player>
                         </div>
                         <!-- Заменил animate__fadeInRight -->
                         <div class="what-get__info wow animate__fadeIn" data-wow-delay="0.4s">
@@ -166,7 +179,7 @@
                     <div class="what-get__row">
                         <!-- Заменил animate__fadeInLeft -->
                         <div class="what-get__picture wow animate__fadeIn">
-                            <lottie-player class="what-get__picture--player" src="https://assets5.lottiefiles.com/packages/lf20_9stxp8oi.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                            <lottie-player class="what-get__picture--player _large-size" src="https://assets5.lottiefiles.com/packages/lf20_9stxp8oi.json" background="transparent" speed="1" loop autoplay></lottie-player>
                         </div>
                         <!-- Заменил animate__fadeInRight -->
                         <div class="what-get__info wow animate__fadeIn" data-wow-delay="0.4s">
@@ -364,7 +377,8 @@
                             <div class="tariffs__card--price">
                                 <strong class="tariffs__card--price-value">300</strong>
                                 <div class="tariffs__card--price-info">
-                                    <span class="tariffs__card--price-saving _accent">
+                                    <!-- Убрал _accent -->
+                                    <span class="tariffs__card--price-saving">
                                         Економія 25%
                                     </span>
                                     <div class="tariffs__card--price-min-info">
@@ -597,8 +611,15 @@
             </div>
         </section>
         <section class="charity">
-            <div class="charity__bg wow animate__fadeIn">
-                <img src="img/charity/bg.svg" width="0" height="0" alt="" class="charity__bg--img">
+            <!-- Удалил wow animate__fadeIn -->
+            <div class="charity__bg">
+                <!-- Заменил img на picture -->
+                <picture style="width: 100%;">
+                    <source srcset="img/charity/bg.svg" media="(min-width: 400px)">
+                    <source srcset="img/charity/bg-mob.svg">
+                    <img src="img/charity/bg.svg" width="0" height="0" alt="" class="charity__bg--img">
+                </picture>
+                <!-- /Заменил img на picture -->
             </div>
             <div class="charity__container _container">
                 <h2 class="charity__title _section-title _txt-center wow animate__fadeInUp" data-wow-offset="300">
@@ -610,7 +631,6 @@
                         10% від прибутку йдуть на те, щоб нагодувати нужденний людей в Україні. Допомагаємо благодійному фонду "Їжа Життя"
                     </p>
                 </div>
-                
                 <div class="charity__block">
                     <div class="charity__slider wow animate__fadeIn" data-wow-delay="0.6s">
                         <div class="charity__slider--wrapper swiper">
